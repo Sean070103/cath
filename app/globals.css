@@ -135,7 +135,15 @@ html {
 
 /* Gradient backgrounds */
 .bg-simple-gradient {
-  background: linear-gradient(135deg, #f8fafc 0%, #f3e7ee 100%);
+  background: radial-gradient(ellipse at 15% 50%, #fdebf7, transparent 40%),
+    radial-gradient(ellipse at 85% 50%, #e9e7f5, transparent 40%);
+  background-color: white; /* Fallback */
+}
+
+.dark .bg-simple-gradient {
+  background: radial-gradient(ellipse at 15% 50%, hsla(338, 80%, 80%, 0.2), transparent 40%),
+    radial-gradient(ellipse at 85% 50%, hsla(260, 80%, 80%, 0.2), transparent 40%);
+  background-color: hsl(222.2, 84%, 4.9%); /* Fallback */
 }
 
 .text-gradient {

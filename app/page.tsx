@@ -5,6 +5,8 @@ import { Badge } from "@/components/ui/badge"
 import Link from "next/link"
 import { ProjectCard } from "@/components/project-card"
 import { SectionHeader } from "@/components/section-header"
+import { FaJava, FaHtml5, FaCss3Alt, FaPython, FaReact, FaFigma, FaUnity, FaGithub } from 'react-icons/fa'
+import { SiJavascript, SiMysql, SiSupabase, SiFirebase, SiVsco, SiExpo } from 'react-icons/si'
 
 export default function Portfolio() {
   const projects = [
@@ -30,12 +32,35 @@ export default function Portfolio() {
       github: "https://github.com/odeCat/Armada_Logics/tree/master/catherine_olleres_exam",
       image: "/SM appliance.png",
     },
+    {
+      title: "Blender Project - Venom in a Jar",
+      description: "3D modeling and rendering project created in Blender, featuring a detailed venom specimen contained in a glass jar with realistic lighting and materials.",
+      technologies: ["Blender", "3D Modeling", "Texturing", "Rendering", "Material Design"],
+      image: "/Blender Proj (Venom in a Jar).png",
+    },
   ]
 
   const skills = {
-    "Programming Languages": ["Java", "JavaScript", "HTML5", "CSS3", "Python"],
-    "Database Management": ["MySQL", "Supabase", "Firebase"],
-    "Development Tools": ["VS Code", "React Native", "Unity", "Figma", "Expo Go", "GitHub"],
+    "Programming Languages": [
+      { name: "Java", Icon: FaJava },
+      { name: "JavaScript", Icon: SiJavascript },
+      { name: "HTML5", Icon: FaHtml5 },
+      { name: "CSS3", Icon: FaCss3Alt },
+      { name: "Python", Icon: FaPython },
+    ],
+    "Database Management": [
+      { name: "MySQL", Icon: SiMysql },
+      { name: "Supabase", Icon: SiSupabase },
+      { name: "Firebase", Icon: SiFirebase },
+    ],
+    "Development Tools": [
+      { name: "VS Code", Icon: SiVsco },
+      { name: "React Native", Icon: FaReact },
+      { name: "Unity", Icon: FaUnity },
+      { name: "Figma", Icon: FaFigma },
+      { name: "Expo Go", Icon: SiExpo },
+      { name: "GitHub", Icon: FaGithub },
+    ],
   }
 
   const certifications = [
@@ -55,26 +80,29 @@ export default function Portfolio() {
   return (
     <div className="min-h-screen bg-simple-gradient">
       {/* Header */}
-      <header className="bg-white shadow-sm sticky top-0 z-50 animate-fade-in">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-4">
-            <h1 className="text-2xl font-bold text-gray-900" style={{ fontFamily: "Bebas Neue, sans-serif" }}>
-              Catherine A. Olleres
-            </h1>
-            <nav className="hidden md:flex space-x-8">
-              <Link href="#about" className="text-gray-700 hover:text-[#dd9faf] transition-colors">
-                About
-              </Link>
-              <Link href="#projects" className="text-gray-700 hover:text-[#dd9faf] transition-colors">
+      <header className="sticky top-0 z-50 animate-fade-in py-4">
+        <div className="flex justify-center">
+          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 bg-white/50 backdrop-blur-lg shadow-lg rounded-2xl p-2 border border-white/20">
+            <Link href="/" className="text-xl sm:text-2xl font-bold text-theme-primary px-4" style={{ fontFamily: "Bebas Neue, sans-serif" }}>
+              Cathy 🐱
+            </Link>
+            <nav className="flex space-x-1">
+              <Link
+                href="#projects"
+                className="text-sm sm:text-base text-theme-primary/80 hover:text-theme-primary px-3 py-1 sm:px-4 sm:py-2 rounded-lg transition-colors duration-300 hover:bg-theme-primary/10"
+              >
                 Projects
               </Link>
-              <Link href="#education" className="text-gray-700 hover:text-[#dd9faf] transition-colors">
-                Education
-              </Link>
-              <Link href="#skills" className="text-gray-700 hover:text-[#dd9faf] transition-colors">
+              <Link
+                href="#skills"
+                className="text-sm sm:text-base text-theme-primary/80 hover:text-theme-primary px-3 py-1 sm:px-4 sm:py-2 rounded-lg transition-colors duration-300 hover:bg-theme-primary/10"
+              >
                 Skills
               </Link>
-              <Link href="#contact" className="text-gray-700 hover:text-[#dd9faf] transition-colors">
+              <Link
+                href="/contact"
+                className="text-sm sm:text-base text-theme-primary/80 hover:text-theme-primary px-3 py-1 sm:px-4 sm:py-2 rounded-lg transition-colors duration-300 hover:bg-theme-primary/10"
+              >
                 Contact
               </Link>
             </nav>
@@ -87,10 +115,12 @@ export default function Portfolio() {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center md:items-center gap-8 md:gap-2">
           <div className="flex-1 flex flex-col justify-center items-start text-left gap-6 max-w-4xl">
             <h1 className="text-5xl md:text-7xl font-header text-gradient mt-8 mb-2">
-              Hi, I am <span className="text-primary">Catherine Olleres</span>
+              Hi, I am <span className="text-theme-primary">Catherine Olleres</span>
             </h1>
-            <div className="text-lg md:text-xl text-primary font-semibold mb-4">Web & Mobile Developer | Computer Science Graduate</div>
-            <p className="text-lg md:text-xl text-gray-600 max-w-2xl leading-relaxed mb-8 font-body animate-fade-in">
+            <div className="text-lg md:text-xl text-theme-primary font-semibold mb-4">
+              Web & Mobile Developer | Computer Science Graduate
+            </div>
+            <p className="text-lg md:text-xl text-theme-primary max-w-2xl leading-relaxed mb-8 font-body animate-fade-in">
               Computer Science graduate passionate about building modern, accessible web and mobile applications. Experienced in JavaScript, React, and emerging technologies. Collaborative, innovative, and committed to continuous learning.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mt-2 w-full md:w-auto">
@@ -108,7 +138,7 @@ export default function Portfolio() {
                 className="border-primary text-primary hover:bg-primary hover:text-white px-8 py-3 text-lg transition-transform duration-300 hover:scale-105 shadow-lg w-full sm:w-auto flex items-center gap-2"
                 asChild
               >
-                <a href="https://www.linkedin.com/in/catherineolleres/" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.linkedin.com/in/catherine-olleres/" target="_blank" rel="noopener noreferrer">
                   <Linkedin className="w-5 h-5" />
                   LinkedIn
                 </a>
@@ -171,35 +201,37 @@ export default function Portfolio() {
       {/* Education Section */}
       <section id="education" className="py-20 px-4 sm:px-6 lg:px-8 bg-white animate-slide-up">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-header text-center text-gray-900 mb-12 animate-slide-up">
+          <h2 className="text-4xl font-header text-center text-theme-primary mb-12 animate-slide-up">
             Education
           </h2>
           <Card className="max-w-4xl mx-auto">
             <CardHeader>
-              <CardTitle className="text-2xl text-gray-900 flex items-center gap-2 font-header">
-                <Calendar className="w-6 h-6 text-primary" />
+              <CardTitle className="text-2xl text-theme-primary flex items-center gap-2 font-header">
+                <Calendar className="w-6 h-6 text-theme-primary" />
                 University of Cabuyao – PnC
               </CardTitle>
-              <CardDescription className="text-lg">2021 - Present</CardDescription>
+              <CardDescription className="text-lg text-theme-primary">2021 - Present</CardDescription>
             </CardHeader>
             <CardContent>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Bachelor of Science in Computer Science</h3>
+              <h3 className="text-xl font-semibold text-theme-primary mb-4">
+                Bachelor of Science in Computer Science
+              </h3>
               <div className="space-y-4">
                 <div>
-                  <h4 className="font-semibold text-gray-800 mb-2">Coursework:</h4>
-                  <p className="text-gray-600">
+                  <h4 className="font-semibold text-theme-primary mb-2">Coursework:</h4>
+                  <p className="text-theme-primary">
                     Data Structures and Algorithms, Information Management, Algorithms and Complexity, Information
                     Assurance Security, Software Engineering
                   </p>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <div>
-                    <span className="font-semibold text-gray-800">GWA:</span>
-                    <span className="text-primary font-bold ml-2">1.52</span>
+                    <span className="font-semibold text-theme-primary">GWA:</span>
+                    <span className="text-theme-primary font-bold ml-2">1.52</span>
                   </div>
                   <div>
-                    <span className="font-semibold text-gray-800">Expected Graduation:</span>
-                    <span className="text-gray-600 ml-2">June 2025</span>
+                    <span className="font-semibold text-theme-primary">Expected Graduation:</span>
+                    <span className="text-theme-primary ml-2">June 2025</span>
                   </div>
                 </div>
               </div>
@@ -209,33 +241,35 @@ export default function Portfolio() {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="py-20 px-4 sm:px-6 lg:px-8">
+      <section id="skills" className="py-20 px-4 sm:px-6 lg:px-8 animate-slide-up">
         <div className="max-w-7xl mx-auto">
-          <h2
-            className="text-4xl font-bold text-center text-gray-900 mb-12"
-            style={{ fontFamily: "Bebas Neue, sans-serif" }}
-          >
-            Technical Skills
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {Object.entries(skills).map(([category, skillList], index) => (
-              <Card key={index}>
+          <SectionHeader title="Technical Skills" />
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {Object.entries(skills).map(([category, skillsList]) => (
+              <Card
+                key={category}
+                className="bg-white/60 transition-all duration-300 hover:shadow-xl hover:-translate-y-2"
+              >
                 <CardHeader>
-                  <CardTitle
-                    className="text-xl text-gray-900 flex items-center gap-2"
-                    style={{ fontFamily: "Work Sans, sans-serif" }}
-                  >
-                    <Code className="w-5 h-5 text-[#dd9faf]" />
+                  <CardTitle className="text-xl text-theme-primary font-header flex items-center gap-2">
+                    <Code className="w-5 h-5 text-theme-primary" />
                     {category}
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="flex flex-wrap gap-2">
-                    {skillList.map((skill, skillIndex) => (
-                      <Badge key={skillIndex} className="bg-[#dd9faf] text-white">
-                        {skill}
-                      </Badge>
-                    ))}
+                    {skillsList.map((skill, skillIndex) => {
+                      const { Icon, name } = skill
+                      return (
+                        <div
+                          key={skillIndex}
+                          className="flex items-center gap-2 bg-theme-primary/10 text-theme-primary font-body px-3 py-1 rounded-md"
+                        >
+                          {Icon && <Icon />}
+                          <span>{name}</span>
+                        </div>
+                      )
+                    })}
                   </div>
                 </CardContent>
               </Card>
@@ -245,52 +279,32 @@ export default function Portfolio() {
       </section>
 
       {/* Certifications Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <section id="certifications" className="py-20 px-4 sm:px-6 lg:px-8 bg-white animate-slide-up">
         <div className="max-w-7xl mx-auto">
-          <h2
-            className="text-4xl font-bold text-center text-gray-900 mb-12"
-            style={{ fontFamily: "Bebas Neue, sans-serif" }}
-          >
-            Certifications
-          </h2>
+          <SectionHeader title="Certifications & Achievements" subtitle="A showcase of my commitment to continuous learning" />
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {certifications.map((cert, index) => (
-              <Card key={index} className="hover:shadow-md transition-shadow">
-                <CardHeader>
-                  <CardTitle
-                    className="text-lg text-gray-900 flex items-center gap-2"
-                    style={{ fontFamily: "Work Sans, sans-serif" }}
-                  >
-                    <Award className="w-5 h-5 text-[#dd9faf]" />
-                    {cert.name}
-                  </CardTitle>
-                  <CardDescription>
-                    <div className="text-gray-600">{cert.org}</div>
-                    <div className="text-sm text-[#dd9faf] font-semibold">{cert.date}</div>
-                    {cert.url && (
-                      <Button
-                        asChild
-                        variant="outline"
-                        className="mt-3 border-primary text-primary hover:bg-primary hover:text-white px-4 py-2 text-sm"
-                      >
-                        <a href={cert.url} target="_blank" rel="noopener noreferrer">
-                          View Certificate
-                        </a>
-                      </Button>
-                    )}
-                  </CardDescription>
-                </CardHeader>
-              </Card>
+              <a href={cert.url} key={index} target="_blank" rel="noopener noreferrer" className="block">
+                <Card className="hover:shadow-lg transition-shadow h-full flex flex-col">
+                  <CardHeader>
+                    <CardTitle className="text-lg text-theme-primary font-header">{cert.name}</CardTitle>
+                  </CardHeader>
+                  <CardContent className="flex-grow">
+                    <p className="text-sm text-theme-primary font-body">{cert.org}</p>
+                    <p className="text-sm text-theme-primary font-body">{cert.date}</p>
+                  </CardContent>
+                </Card>
+              </a>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Organizations Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+      {/* Experience Section */}
+      <section id="experience" className="py-20 px-4 sm:px-6 lg:px-8 bg-white animate-slide-up">
         <div className="max-w-7xl mx-auto">
           <h2
-            className="text-4xl font-bold text-center text-gray-900 mb-12"
+            className="text-4xl font-bold text-center text-theme-primary mb-12"
             style={{ fontFamily: "Bebas Neue, sans-serif" }}
           >
             Organizations
@@ -299,16 +313,18 @@ export default function Portfolio() {
             <Card>
               <CardHeader>
                 <CardTitle
-                  className="text-xl text-gray-900 flex items-center gap-2"
+                  className="text-xl text-theme-primary flex items-center gap-2"
                   style={{ fontFamily: "Work Sans, sans-serif" }}
                 >
-                  <Users className="w-5 h-5 text-[#dd9faf]" />
+                  <Users className="w-5 h-5 text-theme-primary" />
                   Executive Secretary
                 </CardTitle>
-                <CardDescription>AWS Cloud Club University of Cabuyao • 2023 – Present</CardDescription>
+                <CardDescription className="text-theme-primary">
+                  AWS Cloud Club University of Cabuyao • 2023 – Present
+                </CardDescription>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-600">
+                <p className="text-theme-primary">
                   Prepared confidential and sensitive documents. Provided webinars for an introduction to Cloud
                   Computing.
                 </p>
@@ -317,16 +333,18 @@ export default function Portfolio() {
             <Card>
               <CardHeader>
                 <CardTitle
-                  className="text-xl text-gray-900 flex items-center gap-2"
+                  className="text-xl text-theme-primary flex items-center gap-2"
                   style={{ fontFamily: "Work Sans, sans-serif" }}
                 >
-                  <Users className="w-5 h-5 text-[#dd9faf]" />
+                  <Award className="w-5 h-5 text-theme-primary" />
                   Marketing Associate
                 </CardTitle>
-                <CardDescription>Junior Blockchain Education Consortium – Dangals • 2024 – Present</CardDescription>
+                <CardDescription className="text-theme-primary">
+                  Junior Blockchain Education Consortium – Dangals • 2024 – Present
+                </CardDescription>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-600">
+                <p className="text-theme-primary">
                   Contributed to marketing organization events and managed social media presence to boost engagement.
                 </p>
               </CardContent>
@@ -335,43 +353,15 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-[#dd9faf]">
-        <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-white mb-8" style={{ fontFamily: "Bebas Neue, sans-serif" }}>
-            Let's Connect
-          </h2>
-          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            I'm always open to discussing new opportunities, collaborations, or just having a chat about technology and
-            development.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button className="bg-white text-[#dd9faf] hover:bg-gray-100 px-8 py-3 text-lg">
-              <Mail className="w-5 h-5 mr-2" />
-              Send Email
-            </Button>
-            <Button
-              variant="outline"
-              className="border-white text-white hover:bg-white hover:text-[#dd9faf] px-8 py-3 text-lg"
-            >
-              <Linkedin className="w-5 h-5 mr-2" />
-              LinkedIn
-            </Button>
-            <Button
-              variant="outline"
-              className="border-white text-white hover:bg-white hover:text-[#dd9faf] px-8 py-3 text-lg"
-            >
-              <Github className="w-5 h-5 mr-2" />
-              GitHub
-            </Button>
-          </div>
-        </div>
-      </section>
-
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-8 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto text-center">
-          <p className="text-gray-400">© 2025 Catherine A. Olleres. All rights reserved.</p>
+      <footer className="bg-theme-text-primary text-white py-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center items-center relative">
+          <div className="absolute left-4 sm:left-6 lg:left-8">
+            <div className="flex items-center justify-center h-10 w-10 rounded-full bg-black">
+              <span className="font-bold text-xl font-bebas text-white">N</span>
+            </div>
+          </div>
+          <p className="text-sm text-gray-300">&copy; 2025 Catherine A. Olleres. All rights reserved.</p>
         </div>
       </footer>
     </div>

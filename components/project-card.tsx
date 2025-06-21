@@ -29,18 +29,24 @@ export function ProjectCard({ title, description, technologies, github, live, im
             onClick={() => setModalOpen(true)}
           />
           {modalOpen && (
-            <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80" onClick={() => setModalOpen(false)}>
-              <div className="relative max-w-3xl w-full flex items-center justify-center p-2" onClick={e => e.stopPropagation()}>
-                <img src={image} alt={title} className="max-h-[80vh] max-w-full w-auto rounded-lg shadow-lg" />
-              </div>
+            <div
+              className="fixed inset-0 z-50 flex cursor-pointer items-center justify-center bg-black/80 p-4"
+              onClick={() => setModalOpen(false)}
+            >
+              <img
+                src={image}
+                alt={title}
+                className="max-h-[90vh] max-w-[90vw] cursor-default rounded-lg shadow-lg"
+                onClick={e => e.stopPropagation()}
+              />
             </div>
           )}
         </React.Fragment>
       )}
       <CardHeader className="p-0 pb-4">
         <div className="px-4 py-4 md:px-6 md:pt-4">
-          <CardTitle className="text-xl text-primary font-header">{title}</CardTitle>
-          <CardDescription className="text-gray-600 font-body">{description}</CardDescription>
+          <CardTitle className="text-xl text-theme-primary font-header">{title}</CardTitle>
+          <CardDescription className="text-theme-primary font-body">{description}</CardDescription>
         </div>
       </CardHeader>
       <CardContent>
